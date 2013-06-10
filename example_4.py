@@ -3,12 +3,13 @@
 # follow the blue points better. What is happening?
 
 import numpy as np
+from copy import deepcopy
 np.random.seed(12345)  # ensures the random values are always the same
 import matplotlib.pyplot as plt
 
 
 def median_filter(x, y, width):
-    y_new = y
+    y_new = deepcopy(y)
     for i in range(len(x)):
         y_new[i] = np.median(y[(x > x[i] - width * 0.5) &
                                (x < x[i] + width * 0.5)])
