@@ -9,11 +9,11 @@
 # The following is so that it works with Python 3 too
 from __future__ import print_function
 
-import numpy as np
+import numpy.random as np
 
 
 def sorted_random_array(n):
-    x = np.random.random(n)
-    return x.sort()
-
+    x = np.random_sample(n)
+    x.sort()
+    return x
 print("Sorted random values: ", sorted_random_array(10))
